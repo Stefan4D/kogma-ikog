@@ -1,13 +1,14 @@
 // DOM elements
-// var searchInput = document.getElementById("search-input");
-// var searchButton = document.getElementById("search-button");
-// var weatherData = document.getElementById("weather-data");
-// var historyList = document.getElementById("history-list");
-// var forecast = document.getElementById("forecast");
+var weatherInput = document.getElementById("weather-input");
+var weatherSearchButton = document.getElementById("weather-search-button");
 
-//  search button
-// searchButton.addEventListener("click", getWeather)
-// Function to fetch
+// event listener to search button
+weatherSearchButton.addEventListener("click", function () {
+  var cityName = weatherInput.value;
+  getWeather(cityName);
+});
+
+// Function to fetch weather info
 function fetchWeather(cityName) {
   var apiKey = "e65881984450c0477412f63cf68a5579";
   return fetch(
@@ -16,21 +17,22 @@ function fetchWeather(cityName) {
     return response.json();
   });
 }
+
+// Function to get weather info
 function getWeather(cityName) {
-  // Get the city
-  var cityName = cityName || searchInput.value;
+  // Check if city name is empty
+  if (!cityName) {
+    alert("Please enter a city name");
+    return;
+  }
 
-  //   // city name alert
-  //   if (!cityName) {
-  //     alert("Please enter a city name");
-  //     return;
-  //   }
-
+  // Fetch weather using the city name
   fetchWeather(cityName).then((info) => {
-    //     displayWeather(info);
     console.log(info);
-    //     addToHistory(cityName);
+    displayWeather(info);
+    addToHistory(cityName);
   });
 }
 
-getWeather("Birmingham");
+// Call the getWeather (for testing)
+// getWeather("Enter city name");
