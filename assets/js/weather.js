@@ -16,9 +16,9 @@ function fetchWeather(cityName) {
     return response.json();
   });
 }
-function getWeather() {
+function getWeather(cityName) {
   // Get the city
-  var cityName = searchInput.value;
+  var cityName = cityName || searchInput.value;
 
   //   // city name alert
   //   if (!cityName) {
@@ -33,4 +33,4 @@ function getWeather() {
   });
 }
 
-fetchWeather("Birmingham");
+getWeather("Birmingham");
