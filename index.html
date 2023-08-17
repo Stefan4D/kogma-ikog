@@ -17,7 +17,6 @@
     <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
     <title>iKog</title>
   </head>
-
   <body>
     <!-- Insert header -->
     <header>
@@ -29,27 +28,30 @@
       <section class="widgets row">
         <div class="newsfeed col-md-6">
           <h2>My News Feeds</h2>
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Sports"
-              aria-label="News topic search field"
-              aria-describedby="button-addon2"
-            />
-            <button
-              class="btn btn-outline-secondary"
-              type="button"
-              id="button-addon2"
-            >
-              Search
-              <i class="bi bi-search"></i>
-            </button>
-          </div>
+          <form id="news-form">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Sports"
+                aria-label="News topic search field"
+                aria-describedby="news-search-button"
+                id="news-search-input"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="news-search-button"
+              >
+                Search
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
           <!-- Card start -->
-          <div class="card text-center">
-            <div class="card-header">Featured</div>
-            <div class="card-body">
+          <div class="card">
+            <div class="card-header" id="news-card-header">Top Stories</div>
+            <div class="card-body" id="news-container">
               <!-- dynamic content in here -->
               <h5 class="card-title">Special title treatment</h5>
               <p class="card-text">
@@ -58,8 +60,8 @@
               </p>
               <!-- dynamic content ends here -->
             </div>
-            <div class="card-footer text-body-secondary" id="recent-weather">
-              <h6>Search history<h6>
+            <div class="card-footer text-body-secondary" id="news-history">
+              <h6>Search history</h6>
               <!-- dynamic content in here -->
               <button class="btn btn-secondary" data-item="">
                 Go somewhere
@@ -75,21 +77,21 @@
           </div>
           <!-- Card end -->
         </div>
-
         <div class="weather col-md-6">
           <h2>Today's Weather</h2>
           <div class="input-group mb-3">
             <input
               type="text"
               class="form-control"
-              placeholder="London"
+              placeholder="Enter city name"
               aria-label="Search Location"
-              aria-describedby="button-addon2"
+              aria-describedby="weather-search-button"
+              id="weather-input"
             />
             <button
               class="btn btn-outline-secondary"
               type="button"
-              id="button-addon2"
+              id="weather-search-button"
             >
               Search
               <i class="bi bi-search"></i>
@@ -110,16 +112,6 @@
             <div class="card-footer text-body-secondary" id="recent-weather">
               <h6>Search history</h6>
               <!-- dynamic content in here -->
-              <button class="btn btn-secondary" data-item="">
-                Go somewhere
-              </button>
-              <button class="btn btn-secondary" data-item="">
-                Go somewhere
-              </button>
-              <button class="btn btn-secondary" data-item="">
-                Go somewhere
-              </button>
-              <!-- dynamic content ends here -->
             </div>
           </div>
           <!-- Card end -->
@@ -132,6 +124,9 @@
       <p>&copy2023 Kogma Dev.</p>
     </footer>
 
+
+    <script src="./assets/js/weather.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/nyt.js"></script>
   </body>
 </html>
