@@ -157,7 +157,7 @@ function renderHistory(history) {
   ---------------
 */
 searchHistory.addEventListener("click", handleClick);
-// newsBtn.addEventListener("click", handleSubmit);
+newsBtn.addEventListener("click", handleSubmit);
 newsForm.addEventListener("submit", handleSubmit);
 
 // Load the news on page load
