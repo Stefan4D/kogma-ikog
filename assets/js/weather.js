@@ -1,8 +1,12 @@
 // DOM elements
 var weatherInput = document.getElementById("weather-input");
 var weatherSearchButton = document.getElementById("weather-search-button");
+var weatherCardTitle = document.querySelector(".weather .card-title");
+var weatherCardBody = document.querySelector(".weather .card-text");
+var weatherHistory = document.getElementById("recent-weather");
+var modal = document.getElementById("modal");
 
-// event listener to search button
+// Event listener for search button
 weatherSearchButton.addEventListener("click", function () {
   var cityName = weatherInput.value;
   getWeather(cityName);
@@ -18,15 +22,66 @@ function fetchWeather(cityName) {
   });
 }
 
-// Function to get weather info
+// Function to display weather info
+function displayWeather(weatherInfo) {
+  // get information weatherInfo from object
+  var temperature = weatherInfo.main.temp;
+  var weatherDescription = weatherInfo.weather[0].description;
+
+  // Display weather info in the UI
+  weatherCardTitle.textContent = `${temperature} °C`;
+  weatherCardBody.textContent = weatherDescription;
+}
+
+// modal fucntion
+function showModal(message) {
+  modal.querySelector(".modal-content").textContent = message;
+  modal.style.display = "block";
+}
+
+//close modal function
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// function to add search history city
+function addToHistory(cityName) {
+  var buttons = Array.from(weatherHistory.querySelectorAll("button"));
+  var historyCount = buttons.length;
+
+  // if history count exceeds 5, remove the oldest button
+  if (historyCount >= 5) {
+    weatherHistory.removeChild(buttons[0]);
+  }
+
+  // Create a new button element
+  var button = document.createElement("button");
+  button.textContent = cityName;
+  button.classList.add("btn", "btn-secondary", "history-button");
+  button.dataset.item = cityName;
+
+  // Add slight spacing between buttons
+  button.style.marginRight = "8px";
+  button.style.marginBottom = "8px";
+
+  // Add event listener to the button
+  button.addEventListener("click", function () {
+    weatherInput.value = cityName;
+    getWeather(cityName);
+  });
+
+  weatherHistory.appendChild(button);
+}
+
+// weather info function
 function getWeather(cityName) {
-  // Check if city name is empty
+  // Modal to check if city name is empty
   if (!cityName) {
-    alert("Please enter a city name");
+    showModal("Please enter a city name");
     return;
   }
 
-  // Fetch weather using the city name
+  // Fetch weather by city name
   fetchWeather(cityName).then((info) => {
     console.log(info);
     displayWeather(info);
@@ -34,5 +89,5 @@ function getWeather(cityName) {
   });
 }
 
-// Call the getWeather (for testing)
-// getWeather("Enter city name");
+// Call the getWeather function (for testing)
+getWeather("Enter city name");
