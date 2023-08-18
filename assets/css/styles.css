@@ -38,16 +38,13 @@ h2 {
 }
 
 .card-footer {
-    background-color: var(--blue-chrome)
+    background-color: var(--blue-chrome);
 }
 
 .btn {
     background-color: var(--blue);
-    border-color: var(--blue)
-}
-
-#button-addon2 {
-    color: var(--white)
+    border-color: var(--blue);
+    color: var(--white);
 }
 
 .form-control {
@@ -56,4 +53,8 @@ h2 {
 
 footer {
     margin: 2% 9%;
+}
+
+a {
+   text-decoration: none;
 }
