@@ -1,4 +1,4 @@
-const apiKey = "2FoBb70zQU4HJwKQirTikAUE1ZQgpI95";
+const apiKey = "1RzrTgWgtI9RLblfZbFq60Wgvme537dU";
 
 // DOM Elements
 const newsBtn = document.getElementById("news-search-button");
@@ -34,10 +34,12 @@ function getTopStories() {
       // console.log(data);
       newsContainer.innerHTML = "";
       const newsItems = document.createElement("ul");
+      newsItems.classList.add("list-group")
       newsContainer.appendChild(newsItems);
       for (let i = 0; i < 5; i++) {
         // console.log(data.results[i]);
         const newsItem = document.createElement("li");
+        newsItem.classList.add("list-group-item")
         newsItem.innerHTML = `<a href="${data.results[i].short_url}">${data.results[i].title}</a>`;
         newsItems.appendChild(newsItem);
       }
@@ -66,10 +68,12 @@ function getArticles(searchTerm = "UK") {
       console.log(articles);
       newsContainer.innerHTML = "";
       const newsItems = document.createElement("ul");
+      newsItems.classList.add("list-group")
       newsContainer.appendChild(newsItems);
       for (let i = 0; i < 5; i++) {
         // console.log(data.results[i]);
         const newsItem = document.createElement("li");
+        newsItem.classList.add("list-group-item")
         newsItem.innerHTML = `<a href="${articles[i].web_url}">${articles[i].headline.main}</a>`;
         newsItems.appendChild(newsItem);
       }
@@ -142,6 +146,8 @@ function updateNewsHistory(history, item) {
 function renderHistory(history) {
   if (history.size === 0) return; // if there is no history, do nothing
   searchHistory.innerHTML = ""; // clear our the element first
+  const heading= document.createElement("h6")
+  heading.textContent= "Search history"
   history.forEach((historyItem) => {
     const newBtn = document.createElement("button");
     newBtn.setAttribute("class", "btn btn-secondary mb-3 mx-1");
@@ -149,6 +155,7 @@ function renderHistory(history) {
     newBtn.setAttribute("data-item", historyItem);
     searchHistory.prepend(newBtn);
   });
+  searchHistory.prepend(heading)
 }
 
 /*
