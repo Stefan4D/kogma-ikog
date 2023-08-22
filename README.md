@@ -13,6 +13,20 @@ The production website is deployed [here](https://stefan4d.github.io/kogma-ikog/
 
 ![Screenshot of deployed webpage](./missing.png)
 
+## How to use iKog
+
+### News Search
+
+- Search for your desired news article topic in the left-hand (large screens) / top search box (mobile devices) and hit search!
+- You will be presented with up to 5 articles relating to your search term.
+- If you haven't searched for any topic then you will see the Top Stories from the New York Times.
+
+### Weather Search
+
+- Search for your desired location in the right-hand (large screens) / bottom search box (mobile devices) and hit search!
+- The weather for your searched location will then display!
+- If you haven't searched for anywhere yet, you will get a placeholder for the weather in London!
+
 ## Team
 
 The team that built iKog is:
@@ -27,9 +41,9 @@ The team that built iKog is:
 
 ### Technical Acceptance Criteria
 
-| Item                                                                                                                                                                                                                                                                                                                                                                                    | Evidence                                                                                                                                                                                                                                                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Satisfies the following code requirements: <br/>Application uses at least two server-side APIsLinks to an external site. <br/>Application uses client-side storage to store persistent data. <br/>Application doesn't use JS alerts, prompts, or confirms (uses modals instead). <br/>Application uses Bootstrap. <br/>Application is interactive (accepts and responds to user input). | The built application uses the OpenWeather Forecast5 API and New York Times API. <br/>Uses localStorage to store the search history as well as the most recently searched location. <br/>Does not use alerts, prompts, or confirms. <br/> Application uses Bootstrap v5.3. <br/>Application accepts user input to seach for a weather location or to search for news articles. |
+| Item                                                                                                                                                                                                                                                                                                                                                           | Evidence                                                                                                                                                                                                                                                                                                                                           |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Satisfies the following code requirements: <br/>Application uses at least two server-side APIs. <br/>Application uses client-side storage to store persistent data. <br/>Application doesn't use JS alerts, prompts, or confirms (uses modals instead). <br/>Application uses Bootstrap. <br/>Application is interactive (accepts and responds to user input). | The built application uses the OpenWeather Forecast5 API and New York Times API. <br/>Uses localStorage to store the search history for news articles. <br/>Does not use alerts, prompts, or confirms. <br/> Application uses Bootstrap v5.3. <br/>Application accepts user input to search for a weather location or to search for news articles. |
 
 ### Concept
 
@@ -61,11 +75,11 @@ The following is a wireframe of the overall concept.
 
 ### Application Quality
 
-| Item                                                           | Evidence                                                                                                                                                                                             |
-| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Application user experience is intuitive and easy to navigate. | Application user interface matches the mock-up and uses intuitive elements e.g. click on a history item to search again and remembering the last location searched for when visiting the site again. |
-| Application user interface style is clean and polished.        | As above                                                                                                                                                                                             |
-| Application is responsive.                                     | Application uses the Bootstrap grid system to display content in a responsive way.                                                                                                                   |
+| Item                                                           | Evidence                                                                                                                                            |
+| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Application user experience is intuitive and easy to navigate. | Application user interface matches the wireframe from the original design and uses intuitive elements e.g. click on a history item to search again. |
+| Application user interface style is clean and polished.        | As above                                                                                                                                            |
+| Application is responsive.                                     | Application uses the Bootstrap grid system to display content in a responsive way.                                                                  |
 
 ## License
 

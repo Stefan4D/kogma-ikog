@@ -1,60 +1,51 @@
+/* Set global variables for use across the application */
 :root {
-    --blue: #0769cc;
-    --gold: #CC6A07;
-    --blue-chrome: #D0E6FD;
-    --white: white;
+  --blue: #0769cc;
+  --blue-chrome: #d0e6fd;
+  --white: white;
 }
 
+/* Style the logo */
 #logo-span {
-    color: var(--blue-chrome);
-    font-style: italic;
+  color: var(--blue-chrome);
+  font-style: italic;
 }
 
 h1 {
-    color: var(--blue)
+  color: var(--blue);
 }
 
-header {
-    margin: 2% 9%;
-    
-}
-
-
-.card {
-    border-color: var(--blue-chrome);
-    
-}
-
-.card-body {
-}
-
+/* Styling the individual card / section headings */
 h2 {
-    color: var(--blue)
+  color: var(--blue);
+}
+
+/* Styling for the content cards */
+.card {
+  border-color: var(--blue-chrome);
 }
 
 .card-header {
-    background-color: var(--blue-chrome);
-    color: black;   
+  background-color: var(--blue-chrome);
+  color: black;
 }
 
 .card-footer {
-    background-color: var(--blue-chrome);
+  background-color: var(--blue-chrome);
 }
 
+/* Styles the links in the news section */
+a {
+  text-decoration: none;
+}
+
+/* Global styles applied to form elements and buttons */
 .btn {
-    background-color: var(--blue);
-    border-color: var(--blue);
-    color: var(--white);
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
 }
 
 .form-control {
-    border-color: var(--blue-chrome);
-}
-
-footer {
-    margin: 2% 9%;
-}
-
-a {
-   text-decoration: none;
+  border-color: var(--blue-chrome);
 }
