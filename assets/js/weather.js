@@ -1,10 +1,10 @@
 // DOM elements
 var weatherInput = document.getElementById("weather-input");
 var weatherSearchButton = document.getElementById("weather-search-button");
+var weatherCardHeader = document.querySelector("#weather-card-header");
 var weatherCardTitle = document.querySelector(".weather .card-title");
 var weatherCardBody = document.querySelector(".weather .card-text");
 var weatherHistory = document.getElementById("recent-weather");
-var modal = document.getElementById("modal");
 
 // Event listener for search button
 weatherSearchButton.addEventListener("click", function () {
@@ -29,19 +29,9 @@ function displayWeather(weatherInfo) {
   var weatherDescription = weatherInfo.weather[0].description;
 
   // Display weather info in the UI
+  weatherCardHeader.textContent = weatherInfo.name;
   weatherCardTitle.textContent = `${temperature} °C`;
   weatherCardBody.textContent = weatherDescription;
-}
-
-// modal fucntion
-function showModal(message) {
-  modal.querySelector(".modal-content").textContent = message;
-  modal.style.display = "block";
-}
-
-//close modal function
-function closeModal() {
-  modal.style.display = "none";
 }
 
 // function to add search history city
@@ -75,11 +65,8 @@ function addToHistory(cityName) {
 
 // weather info function
 function getWeather(cityName) {
-  // Modal to check if city name is empty
-  if (!cityName) {
-    showModal("Please enter a city name");
-    return;
-  }
+  // If no cityName provided then return
+  if (!cityName) return;
 
   // Fetch weather by city name
   fetchWeather(cityName).then((info) => {
@@ -90,4 +77,4 @@ function getWeather(cityName) {
 }
 
 // Call the getWeather function (for testing)
-getWeather("Enter city name");
+getWeather("London");

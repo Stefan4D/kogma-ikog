@@ -19,7 +19,7 @@
   </head>
   <body>
     <!-- Insert header -->
-    <header>
+    <header class="ms-2 ms-md-5 mt-3">
       <h1><span id="logo-span">i</span>Kog</h1>
     </header>
 
@@ -53,11 +53,8 @@
             <div class="card-header" id="news-card-header">Top Stories</div>
             <div class="card-body" id="news-container">
               <!-- dynamic content in here -->
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
               <!-- dynamic content ends here -->
             </div>
             <div class="card-footer text-body-secondary" id="news-history">
@@ -69,7 +66,7 @@
           </div>
           <!-- Card end -->
         </div>
-        <div class="weather col-md-6">
+        <div class="weather col-md-6 mt-3 mt-md-0">
           <h2>Today's Weather</h2>
           <div class="input-group mb-3">
             <input
@@ -91,14 +88,11 @@
           </div>
           <!-- Card start -->
           <div class="card text-center">
-            <div class="card-header">Featured</div>
+            <div class="card-header" id="weather-card-header">Featured</div>
             <div class="card-body">
               <!-- dynamic content in here -->
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
               <!-- dynamic content ends here -->
             </div>
             <div class="card-footer text-body-secondary" id="recent-weather">
@@ -112,12 +106,16 @@
     </main>
 
     <!-- Insert footer -->
-    <footer>
+    <footer class="text-center mt-3">
       <p>&copy2023 Kogma Dev.</p>
     </footer>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/js/weather.js"></script>
-    <script src="./assets/js/script.js"></script>
     <script src="./assets/js/nyt.js"></script>
   </body>
 </html>
