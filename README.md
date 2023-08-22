@@ -11,7 +11,7 @@ This information is pulled from 2 specific API endpoints:
 
 The production website is deployed [here](https://stefan4d.github.io/kogma-ikog/).
 
-![Screenshot of deployed webpage](./missing.png)
+![Screenshot of deployed webpage](./docs/stefan4d.github.io_kogma-ikog_.png)
 
 ## How to use iKog
 
