@@ -65,7 +65,7 @@ function getArticles(searchTerm = "UK") {
     .then((data) => {
       // do something with the data
       const articles = data.response.docs;
-      console.log(articles);
+      // console.log(articles);
       newsContainer.innerHTML = "";
       const newsItems = document.createElement("ul");
       newsItems.classList.add("list-group");

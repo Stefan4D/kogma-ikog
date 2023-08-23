@@ -27,11 +27,15 @@ function displayWeather(weatherInfo) {
   // get information weatherInfo from object
   var temperature = weatherInfo.main.temp;
   var weatherDescription = weatherInfo.weather[0].description;
+  var weatherIcon = weatherInfo.weather[0].icon; // New line
 
   // Display weather info in the UI
   weatherCardHeader.textContent = weatherInfo.name;
   weatherCardTitle.textContent = `${temperature} °C`;
   weatherCardBody.textContent = weatherDescription;
+
+  var weatherIconElement = document.getElementById("weather-icon");
+  weatherIconElement.src = `https://openweathermap.org/img/w/${weatherIcon}.png`; // New line
 }
 
 // function to add search history city
@@ -62,15 +66,12 @@ function addToHistory(cityName) {
 
   weatherHistory.appendChild(button);
 }
-
 // weather info function
 function getWeather(cityName) {
   // If no cityName provided then return
   if (!cityName) return;
-
   // Fetch weather by city name
   fetchWeather(cityName).then((info) => {
-    console.log(info);
     displayWeather(info);
     addToHistory(cityName);
   });
