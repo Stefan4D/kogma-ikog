@@ -24,10 +24,12 @@ function fetchWeather(cityName) {
 
 // Function to display weather info
 function displayWeather(weatherInfo) {
+  // get information weatherInfo from object
   var temperature = weatherInfo.main.temp;
   var weatherDescription = weatherInfo.weather[0].description;
   var weatherIcon = weatherInfo.weather[0].icon; // New line
 
+  // Display weather info in the UI
   weatherCardHeader.textContent = weatherInfo.name;
   weatherCardTitle.textContent = `${temperature} °C`;
   weatherCardBody.textContent = weatherDescription;
